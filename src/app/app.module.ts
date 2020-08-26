@@ -3,9 +3,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
 import { RouterModule, Routes } from '@angular/router';
-
 const routes: Routes = [
   {
     path: 'home',
@@ -13,13 +11,15 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    component: ProfileComponent,
+    loadChildren: () => import('./lazy/lazy.module').then((m) => m.LazyModule),
   },
-  { path: '', component: HomeComponent },
+  {
+    path: '',
+    component: HomeComponent,
+  },
 ];
-
 @NgModule({
-  declarations: [AppComponent, HomeComponent, ProfileComponent],
+  declarations: [AppComponent, HomeComponent],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
