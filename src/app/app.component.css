@@ -1,0 +1,41 @@
+.toolbar {
+  height: 82px;
+  display: flex;
+  align-items: baseline;
+  background-color: #fdfdfd;
+  color: grey;
+  font-weight: 600;
+}
+.toolbar img {
+  margin: 45px 130px;
+}
+.home-btn {
+  margin-left: 50%;
+  color: black;
+}
+.profile-btn {
+  margin-left: 20px;
+  color: black;
+}
+
+.ActivBtnNav {
+  color: #007bff;
+}
+
+/* .toolbar a {
+  display: block;
+  color: rgb(126, 101, 101);
+  text-decoration: none;
+  padding: 14px 16px;
+  text-align: center;
+} */
+
+.toolbar a:hover:not(.activeBt) {
+  /* background-color: #111; */
+  color: black;
+}
+
+.toolbar a:focus {
+  /* background-color: #007bff; */
+  color: #007bff;
+}

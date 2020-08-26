@@ -1,0 +1,50 @@
+.shadows {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  transition: 0.3s;
+}
+.shadows:hover {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.toolbar {
+  height: 82px;
+  display: flex;
+  align-items: baseline;
+  background-color: #fdfdfd;
+  color: grey;
+  font-weight: 600;
+}
+
+input {
+  padding: 25px;
+  border-radius: 10px;
+}
+input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #030303;
+  outline: 0;
+  box-shadow: 0 0 0;
+}
+.btn-submit {
+  margin-left: 80%;
+}
+
+.toolbar img {
+  margin: 45px 130px;
+}
+.input-list {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ced4da;
+}
+.error,
+.error:focus {
+  border-color: red;
+}
+
+.text-error {
+  color: red;
+  font-size: small;
+  margin-top: 4px;
+}
