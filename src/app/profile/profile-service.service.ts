@@ -82,7 +82,7 @@ export class ProfileServiceService {
       }
     });
   }
-  checkLocalStorage(): void {
+  loadLocalStorage(): void {
     if (localStorage.getItem('form-data') != null) {
       this.profileForm.setValue({
         firstName: JSON.parse(localStorage.getItem('form-data')).firstName,

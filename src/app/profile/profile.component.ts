@@ -12,7 +12,7 @@ export class ProfileComponent {
   constructor(private service: ProfileServiceService) {
     this.service.formInitData();
     this.service.formChangeEvent();
-    this.service.checkLocalStorage();
+    this.service.loadLocalStorage();
   }
   get profileForm(): FormGroup {
     return this.service.profileForm;

@@ -1,20 +1,20 @@
 .toolbar {
   height: 82px;
-  display: flex;
-  align-items: baseline;
+  /* display: flex;
+  align-items: baseline; */
   background-color: #fdfdfd;
-  color: grey;
   font-weight: 600;
+  padding-top: 45px;
 }
 .toolbar img {
-  margin: 45px 130px;
+  /* margin: 45px 130px; */
 }
 .home-btn {
-  margin-left: 50%;
+  /* margin-left: 50%; */
   color: black;
 }
 .profile-btn {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   color: black;
 }
 
