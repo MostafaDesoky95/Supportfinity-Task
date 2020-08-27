@@ -6,8 +6,8 @@ import * as $ from 'jquery';
   providedIn: 'root',
 })
 export class ProfileServiceService {
-  str2 = 'test';
-  str3 = 'test2';
+  skillPlaceHolder = 'SkillValidationTest';
+  skillPlaceHolder2 = 'SkillValidationTest2';
   showSuccessMsg = false;
   profileForm: FormGroup;
   skillList: Array<string> = [
@@ -42,12 +42,12 @@ export class ProfileServiceService {
         changes.firstSkill === changes.secondSkill &&
         changes.firstSkill !== ''
       ) {
-        this.str2 = changes.secondSkill;
+        this.skillPlaceHolder = changes.secondSkill;
         $(document).ready(() => {
           $('#skill2').addClass('error');
         });
       } else {
-        this.str2 = 'test';
+        this.skillPlaceHolder = 'SkillValidationTest';
         $(document).ready(() => {
           $('#skill2').removeClass('error');
         });
@@ -56,12 +56,13 @@ export class ProfileServiceService {
         changes.firstSkill === changes.thirdSkill &&
         changes.firstSkill !== ''
       ) {
-        this.str3 = changes.thirdSkill;
+        this.skillPlaceHolder2 = changes.thirdSkill;
         $(document).ready(() => {
           $('#skill3').addClass('error');
+          console.log(this.skillPlaceHolder2);
         });
       } else {
-        this.str3 = 'test2';
+        this.skillPlaceHolder2 = 'SkillValidationTest2';
         $(document).ready(() => {
           $('#skill3').removeClass('error');
         });
@@ -70,12 +71,16 @@ export class ProfileServiceService {
         changes.secondSkill === changes.thirdSkill &&
         changes.secondSkill !== ''
       ) {
-        this.str3 = changes.thirdSkill;
+        this.skillPlaceHolder2 = changes.thirdSkill;
         $(document).ready(() => {
           $('#skill3').addClass('error');
         });
-      } else if (changes.secondSkill) {
-        this.str3 = 'test2';
+      } else if (
+        changes.secondSkill &&
+        changes.firstSkill !== changes.thirdSkill
+      ) {
+        console.log(this.skillPlaceHolder2);
+        this.skillPlaceHolder2 = 'SkillValidationTest2';
         $(document).ready(() => {
           $('#skill3').removeClass('error');
         });

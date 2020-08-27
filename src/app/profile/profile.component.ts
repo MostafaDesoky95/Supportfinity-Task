@@ -1,6 +1,5 @@
 import { ProfileServiceService } from './profile-service.service';
 import { Component } from '@angular/core';
-import * as $ from 'jquery';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -35,11 +34,11 @@ export class ProfileComponent {
   get successMsg(): boolean {
     return this.service.showSuccessMsg;
   }
-  get str2(): string {
-    return this.service.str2;
+  get skillPlaceHolder(): string {
+    return this.service.skillPlaceHolder;
   }
-  get str3(): string {
-    return this.service.str3;
+  get skillPlaceHolder2(): string {
+    return this.service.skillPlaceHolder2;
   }
   get skillList(): Array<string> {
     return this.service.skillList;
@@ -47,8 +46,8 @@ export class ProfileComponent {
 
   get formStatus(): boolean {
     if (
-      this.service.str3 === 'test2' &&
-      this.service.str2 === 'test' &&
+      this.service.skillPlaceHolder2 === 'SkillValidationTest2' &&
+      this.service.skillPlaceHolder === 'SkillValidationTest' &&
       this.service.skillList.includes(
         this.profileForm.controls.firstSkill.value
       ) &&
@@ -63,34 +62,17 @@ export class ProfileComponent {
     }
   }
   get skillOne(): boolean {
-    if (
-      !this.service.skillList.includes(
-        this.profileForm.controls.firstSkill.value
-      )
-    ) {
-      return false;
-    }
-    return true;
+    return this.skillCheck(this.profileForm.controls.firstSkill.value);
   }
   get skillTwo(): boolean {
-    if (
-      !this.service.skillList.includes(
-        this.profileForm.controls.secondSkill.value
-      )
-    ) {
-      return false;
-    }
-    return true;
+    return this.skillCheck(this.profileForm.controls.secondSkill.value);
   }
   get skillThree(): boolean {
-    if (
-      !this.service.skillList.includes(
-        this.profileForm.controls.thirdSkill.value
-      )
-    ) {
-      return false;
-    }
-    return true;
+    return this.skillCheck(this.profileForm.controls.thirdSkill.value);
+  }
+
+  skillCheck(skill: string): boolean {
+    return this.service.skillList.includes(skill);
   }
 
   onSubmit(): void {
