@@ -1,6 +1,6 @@
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Injectable } from '@angular/core';
-import * as $ from 'jquery';
+import $ from 'jquery';
 
 @Injectable({
   providedIn: 'root',
